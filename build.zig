@@ -12,7 +12,6 @@ pub fn build(b: *std.Build) !void {
 
     const raylib = raylib_dep.module("raylib");
     const raylib_artifact = raylib_dep.artifact("raylib");
-
     //web exports are completely separate
     if (target.query.os_tag == .emscripten) {
         const exe_lib = rlz.emcc.compileForEmscripten(b, "pongtut", "src/main.zig", target, optimize);
